@@ -1,10 +1,10 @@
 package com.taskapp.model;
 
 public class User {
-    private int code;
-    private String name;
-    private String email;
-    private String password;
+    private int code; //ユーザーのコード（整数）
+    private String name; //ユーザー名（文字列）
+    private String email; //メールアドレス（文字列）
+    private String password; //パスワード（文字列
 
     public User(int code, String name, String email, String password) {
         this.code = code;

@@ -1,10 +1,11 @@
 package com.taskapp.model;
 
 public class Task {
-    private int code;
-    private String name;
-    private int status;
-    private User repUser;
+    private int code; //タスクのコード（整数）
+    private String name; //タスク名（文字列）
+    private int status;/*/*タスクのステータス（整数）
+                         ・0→未着手、1→着手中、2→完了 */
+    private User repUser; //タスクを担当するユーザーコード（整数）
 
     public Task(int code, String name, int status, User repUser) {
         this.code = code;
