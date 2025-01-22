@@ -49,7 +49,7 @@ public class TaskDataAccess {
                 int code = Integer.parseInt(values[0]);
                 String name = values[1];
                 int status = Integer.parseInt(values[2]);
-                User repUser = values[3];
+                User repUser = userDataAccess.findByCode(Integer.parseInt(values[3]));
 
                 //Taskオブジェクトにマッピング
                 Task task = new Task(code, name, status, repUser);

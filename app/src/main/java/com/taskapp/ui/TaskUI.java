@@ -63,6 +63,7 @@ public class TaskUI {
                 switch (selectMenu) {
                     case "1":
                     //設問2
+                    taskLogic.showAll(loginUser);
                         break;
                     case "2":
                         break;

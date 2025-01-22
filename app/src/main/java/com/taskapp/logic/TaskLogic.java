@@ -46,24 +46,28 @@ public class TaskLogic {
      */
     public void showAll(User loginUser) {
         // findAllメソッドを実行して、データの一覧を取得
-        List<Task> tasks = findAll();
+        List<Task> tasks = taskDataAccess.findAll();
 
         //取得したデータを表示する
-        tasks.forEach(task -> {
+        tasks.stream()
+        .forEach(task -> {
+            String status = "";
             if (task.getStatus() == 0) {
-                System.out.println("未着手");
+                status = "未着手";
             } else if (task.getStatus() == 1) {
-                System.out.println("着手中");
-            } else {
-                System.out.println("完了");
+                status = "着手中";
+            } else if (task.getStatus() == 2) {
+                status = "完了";
             }
-
-            if (task.getRepUser().equals(loginUser.getName())) {
-                System.out.println("あなたが担当しています。");
+            
+            String assigneeMessage = "";
+            if (task.getRepUser().getCode() == loginUser.getCode()) {
+                assigneeMessage = "あなた";
             } else {
-                System.out.println(loginUser.getName());
+                assigneeMessage = loginUser.getName();
             }
-            System.out.println(task.getCode() + ". タスク名：" + task.getName() + ", 担当者名：" + loginUser.getName() + "が担当しています, " + "ステータス：" + task.getStatus());
+            
+            System.out.println(task.getCode() + ". タスク名：" + task.getName() + ", 担当者名：" + assigneeMessage + "が担当しています, " + "ステータス：" + status);
         });
     }
 
