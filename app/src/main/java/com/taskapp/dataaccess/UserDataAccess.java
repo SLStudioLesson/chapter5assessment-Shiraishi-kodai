@@ -73,6 +73,7 @@ public class UserDataAccess {
                 String password = values[3];
 
                 user = new User(userCode, name, email, password);
+
                 break;
             }
         } catch (IOException e) {

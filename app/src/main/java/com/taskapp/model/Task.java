@@ -15,46 +15,38 @@ public class Task {
     }
 
     public int getCode() {
-        return this.code;
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getName() {
-        return this.name;
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getStatus() {
-        return this.status;
-    }
-
-    public User getRepUser() {
-        return this.repUser;
+        return status;
     }
 
     public void setStatus(int status) {
         this.status = status;
     }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + code;
-		return result;
-	}
+    public User getRepUser() {
+        return repUser;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Task other = (Task) obj;
-		if (code != other.code)
-			return false;
-		return true;
-	}
+    public void setRepUser(User repUser) {
+        this.repUser = repUser;
+    }
+
+    
 
     
 }
