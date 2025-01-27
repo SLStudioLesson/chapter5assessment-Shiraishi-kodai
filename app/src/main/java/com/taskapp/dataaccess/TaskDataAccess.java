@@ -51,8 +51,8 @@ public class TaskDataAccess {
                 int code = Integer.parseInt(values[0]);
                 String name = values[1];
                 int status = Integer.parseInt(values[2]);
-                int taskCode = Integer.parseInt(values[3]);
-                User repUser = userDataAccess.findByCode(taskCode);
+                int repUserCode = Integer.parseInt(values[3]);
+                User repUser = userDataAccess.findByCode(repUserCode);
 
                 //Taskオブジェクトにマッピング
                 Task task = new Task(code, name, status, repUser);
@@ -147,12 +147,24 @@ public class TaskDataAccess {
      * @param code 削除するタスクのコード
      */
     // public void delete(int code) {
-    //     try () {
+    //     List<Task> tasks = findAll();
+    //     try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+    //         writer.write("Code,Name,Status,Rep_User_Code");
+    //         writer.newLine();
+            
+    //         for (Task task : tasks) {
+    //             if (code != task.getCode()) {
+    //                 writer.write(task.getCode() + "," + task.getName() + "," + task.getStatus() + "," + task.getRepUser());
+    //             writer.newLine();
+    //             }
+    //         }
 
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
+    //         }catch (IOException e) {
+    //             e.printStackTrace();
+    //         }
+        
     //     }
-    // }
+    }
 
     /**
      * タスクデータをCSVに書き込むためのフォーマットを作成します。
@@ -161,4 +173,3 @@ public class TaskDataAccess {
      */
     // private String createLine(Task task) {
     // }
-}

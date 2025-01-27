@@ -172,8 +172,9 @@ public class TaskUI {
         boolean flg = true;
         while (flg) {
             try {
-                System.out.println("以下1~2から好きな選択肢を選んでください。");
-                System.out.println("1. タスクのステータス変更, 2. メインメニューに戻る");
+                System.out.println("以下1~3から好きな選択肢を選んでください。");
+                System.out.println("1. タスクのステータス変更, 2. タスク削除, 3. メインメニューに戻る");
+                System.out.print("選択肢：");
                 String selectMenu = reader.readLine();
                 System.out.println();
 
@@ -182,8 +183,11 @@ public class TaskUI {
                         inputChangeInformation();
                         break;
                     case "2":
-                        displayMenu();
+                        // inputDeleteInformation();
                         break;
+                    case "3":
+                        displayMenu();
+                        
                 }
                 System.out.println();
             } catch (IOException e) {
@@ -243,6 +247,26 @@ public class TaskUI {
      * @see com.taskapp.logic.TaskLogic#delete(int)
      */
     // public void inputDeleteInformation() {
+    //     boolean flg = true;
+    //     while (flg) {
+    //         try {
+    //             System.out.print("削除するタスクコードを入力してください：");
+    //             String code = reader.readLine();
+
+    //             if ((!isNumeric(code))) {
+    //                 System.out.println("コードは半角の数字で入力してください");
+    //                 continue;
+    //             }
+
+    //             int taskCode = Integer.parseInt(code);
+    //             taskLogic.delete(taskCode);
+    //             flg = false;
+    //         } catch (IOException e) {
+    //             e.printStackTrace();
+    //         } catch (AppException e) {
+    //             System.out.println(e.getMessage());
+    //         }
+    //     }
     // }
 
     /**
