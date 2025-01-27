@@ -44,12 +44,12 @@ public class LogDataAccess {
         }
     }
 
-    public static String createLine(Log log) {
-        return log.getTaskCode() + "," + log.getChangeUserCode() + "," + 0 + "," + LocalDate.now();
-    }
     // public static String createLine(Log log) {
-    //     return log.getTaskCode() + "," + log.getChangeUserCode() + "," + log.getStatus() + "," + LocalDate.now();
+    //     return log.getTaskCode() + "," + log.getChangeUserCode() + "," + 0 + "," + LocalDate.now();
     // }
+    public static String createLine(Log log) {
+        return log.getTaskCode() + "," + log.getChangeUserCode() + "," + log.getStatus() + "," + LocalDate.now();
+    }
 
     /**
      * すべてのログを取得します。

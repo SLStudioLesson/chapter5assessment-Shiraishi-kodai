@@ -95,6 +95,8 @@ public class TaskLogic {
         Task task = new Task(code, name, 0 , user);
         //saveメソッドを呼び出して、入力されたデータを保存
         taskDataAccess.save(task);
+        Log log = new Log(code, repUserCode, 0, LocalDate.now());
+        logDataAccess.save(log);
         System.out.println(name +"の登録が完了しました。");
     }
 
